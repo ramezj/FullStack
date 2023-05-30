@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
-const mongoose = require('mongoose');
 require('dotenv').config()
 
 // Middleware 
@@ -10,7 +9,7 @@ app.use(express.json());
 
 
 // Routes 
-app.use('/', require('./routes/auth'));
+app.use('/api/', require('./routes/auth'));
 
 app.get('/', async (req, res) => {
     res
