@@ -8,6 +8,10 @@ require('dotenv').config()
 app.use(cors())
 app.use(express.json());
 
+
+// Routes 
+app.use('/', require('./routes/auth'));
+
 app.get('/', async (req, res) => {
     res
     .status(200)
