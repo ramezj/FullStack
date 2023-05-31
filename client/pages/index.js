@@ -1,13 +1,10 @@
-import { Inter } from 'next/font/google'
 import React, { useState, useEffect } from 'react';
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [ data, setData ] = useState() 
   useEffect(() => {
     const testBackend = async () => {
-      const resp = await fetch(`${process.env.API_URL}/api/test`);
+      const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`);
       const response = await resp.json();
       setData(response);
     }
