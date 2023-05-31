@@ -2,7 +2,7 @@
 export default function Login() {
     return (
         <>
-        <button className="btn btn-wide">Login</button>
+        <button className="btn">Login</button>
         </>
     )
 }
