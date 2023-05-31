@@ -31,12 +31,11 @@ router.post('/register', async (req, res) => {
                 password:hashed
             }
         });
-        const token = await jwt.sign({id:user.id}, process.env.JWT_SECRET)
-        res.status(200).cookie('auth', token, {
-            httpOnly: true
-        }).json({
+        const token = await jwt.sign({id:user.id}, "NOTASECRET")
+        res.status(200).json({
             ok:true,
-            response:'Logged in Successfully.'
+            response:'Registered Successfully.',
+            token:token
         });
     } catch (error) {
         console.error(error);
@@ -48,7 +47,42 @@ router.post('/register', async (req, res) => {
 })
 
 router.post('/login', async(req, res) => {
-
+    if (!req.body.email || !req.body.password) {
+        res.status(400).json({
+            ok:false,
+            response:'Fields Missing'
+        })
+    }
+    try {
+        const userExist = await prisma.user.findUnique({
+            where:{
+                email:req.body.email
+            }
+        });
+        if(!userExist) {
+            return res.status(400).json({
+                ok:false,
+                response:"User doesn't exist"
+            })
+        }
+        const comparePassword = await bcrypt.compare(req.body.password, userExist.password);
+        if(!comparePassword) {
+            res.status(400).json({
+                ok:false,
+                response:'Incorrect Credentials'
+            })
+        }
+        const loginToken = await jwt.sign({id:userExist.id}, "NOTASECRET");
+        if(userExist && comparePassword && loginToken) {
+            res.status(200).json({
+                ok:true,
+                response:'Logged In Successfully',
+                token:loginToken
+            })
+        }
+    } catch (error) {
+        console.error(error);
+    }
 })
 
 module.exports = router;
