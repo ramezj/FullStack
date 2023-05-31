@@ -32,10 +32,12 @@ router.post('/register', async (req, res) => {
             }
         });
         const token = await jwt.sign({id:user.id}, process.env.JWT_SECRET)
-        res.status(200).json({
+        res.status(200).cookie('auth', token, {
+            httpOnly: true
+        }).json({
             ok:true,
-            response:token
-        })
+            response:'Logged in Successfully.'
+        });
     } catch (error) {
         console.error(error);
         res.status(400).json({
