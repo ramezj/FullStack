@@ -31,7 +31,7 @@ router.post('/register', async (req, res) => {
                 password:hashed
             }
         });
-        const token = await jwt.sign({id:user.id}, "NOTASECRET")
+        const token = await jwt.sign({id:user.id}, process.env.JWT_SECRET)
         res.status(200).json({
             ok:true,
             response:'Registered Successfully.',
@@ -72,7 +72,7 @@ router.post('/login', async(req, res) => {
                 response:'Incorrect Credentials'
             })
         }
-        const loginToken = await jwt.sign({id:userExist.id}, "NOTASECRET");
+        const loginToken = await jwt.sign({id:userExist.id}, process.env.JWT_SECRET);
         if(userExist && comparePassword && loginToken) {
             res.status(200).json({
                 ok:true,
