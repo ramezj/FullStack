@@ -19,9 +19,9 @@ export default function Navbar() {
     }, [])
     return (
         <>
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-transparent">
   <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a className="btn btn-ghost normal-case text-xl font-bold text-gray-900"><b>Super</b>Feedback</a>
   </div>
   <div className="flex-none gap-2">
     <div className="dropdown dropdown-end">
@@ -33,7 +33,7 @@ export default function Navbar() {
         </>
         : 
         <>
-        <div className="flex gap-3">
+        <div className="flex gap-1.5 mt-3">
         <Register />
         <Login />
         </div>

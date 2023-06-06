@@ -1,0 +1,49 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Ramez\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add ioredis connect-redis
+
+PATH: 
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\PuTTY\;C:\Program Files\MongoDB\Server\4.4\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\dotnet\;D:\Git\cmd;C:\Program Files\PostgreSQL\13\bin;C:\Program Files\Mullvad VPN\resources;C:\Program Files\nodejs\;C:\Users\Ramez\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\Ramez\AppData\Local\hyper\app-3.0.2\resources\bin;D:\heroku\bin;C:\Users\Ramez\spicetify-cli;C:\Users\Ramez\AppData\Local\Microsoft\WindowsApps;C:\Users\Ramez\AppData\Local\GitHubDesktop\bin;C:\Users\Ramez\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  18.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'F:\next-express\server\node_modules\prisma\engines\8fbc245156db7124f997f4cecdd8d1219e360944\query_engine-windows.dll.node'
+
+npm manifest: 
+  {
+    "scripts": {
+      "dev": "nodemon index"
+    },
+    "dependencies": {
+      "@prisma/client": "^4.15.0",
+      "@quixo3/prisma-session-store": "^3.1.11",
+      "bcrypt": "^5.1.0",
+      "body-parser": "^1.20.2",
+      "connect-mongo": "^5.0.0",
+      "cookie-parser": "^1.4.6",
+      "cookie-session": "^2.0.0",
+      "cors": "^2.8.5",
+      "dotenv": "^16.1.0",
+      "express": "^4.18.2",
+      "express-session": "^1.17.3",
+      "jsonwebtoken": "^9.0.0",
+      "mongoose": "^7.2.2",
+      "nodemon": "^2.0.22",
+      "passport": "^0.5.3",
+      "passport-google-oauth20": "^2.0.0",
+      "prisma": "^4.15.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

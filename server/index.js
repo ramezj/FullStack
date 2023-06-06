@@ -1,23 +1,37 @@
-const express = require('express');
+import express from "express";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import session from "express-session";
+import dotenv from 'dotenv'
+dotenv.config()
+import bodyParser from "body-parser";
+import { router as auth } from "./routes/auth.js"
+import { redisStore } from "./lib/redis.js"
+
+// Initialize App
 const app = express();
-const cors = require('cors')
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const jwt = require('jsonwebtoken');
+
+// Redis
 
 // Middleware 
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods:"GET,POST,PUT,DELETE",
+    credentials:true
+}))
 app.use(express.json());
 app.use(cookieParser());
+app.use(bodyParser());
+app.use(session({
+    store:redisStore,
+    secret:'test',
+    resave: false,
+    saveUninitialized:false,
+    cookie: ({})
+}));
 
 // Routes 
-app.use('/api/', require('./routes/auth'));
-
-app.get('/test', async(req, res) => {
-    const test = await jwt.verify('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWM3eDZybTAwMDB1c2FrbWp2djAxaHgiLCJpYXQiOjE2ODU1Njg0Mjh9.fO0PSQnGm4gBe_LJZ4iQAcrXgT9KAXryoOdlmTEql1U', "NOTASECRET")
-    res.json(test);
-    console.log(test);
-})
+app.use('/auth', auth);
 
 app.get('/', async (req, res) => {
     res

@@ -11,7 +11,7 @@ export default function Example() {
     const [ data, setData ] = useState();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/register`, {
+        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
