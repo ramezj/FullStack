@@ -13,8 +13,10 @@ export default function Example() {
         e.preventDefault();
         const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 "Content-Type": "application/json",
+                "Access-Control-Allow-Credentials":"true",
             },
             body: JSON.stringify({
                 email: email,

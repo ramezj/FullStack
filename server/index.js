@@ -6,12 +6,16 @@ import dotenv from 'dotenv'
 dotenv.config()
 import bodyParser from "body-parser";
 import { router as auth } from "./routes/auth.js"
-import { redisStore } from "./lib/redis.js"
+import redis, { createClient } from "redis"
+import RedisStore from "connect-redis"
+
+const client = createClient();
+client.on('error', err => console.log('Redis Client Error', err));
+
+await client.connect();
 
 // Initialize App
 const app = express();
-
-// Redis
 
 // Middleware 
 app.use(cors({
@@ -23,7 +27,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser());
 app.use(session({
-    store:redisStore,
+    name:"session",
+    store: new RedisStore({
+        client: client
+    }),
     secret:'test',
     resave: false,
     saveUninitialized:false,

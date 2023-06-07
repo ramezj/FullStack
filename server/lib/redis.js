@@ -5,11 +5,17 @@ let redisClient = await createClient()
     const connectToRedis = async () => {
         try {
             const connect = await redisClient.connect()
+            if(connect) {
+                console.log('Connected to Redis...')
+            }
+            else {
+                console.log(`Couldn't connect to Redis..`)
+            }
         } catch (error) {
             console.error(error);
         }
     }
-    connectToRedis();
+    await connectToRedis();
 let redisStore = new RedisStore({
     client: redisClient,
     prefix: "myapp:",

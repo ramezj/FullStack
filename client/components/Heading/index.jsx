@@ -28,9 +28,8 @@ export default function Dashboard() {
     font-bold 
     text-center 
     text-white 
-    bg-gray-900 
+    bg-gray-950 
     rounded-lg 
-    hover:bg-gray-900 
     focus:ring-4 
     focus:ring-blue-300 
     dark:focus:ring-blue-900

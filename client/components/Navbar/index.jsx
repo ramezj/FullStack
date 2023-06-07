@@ -8,15 +8,21 @@ import Dashboard from './Dashboard';
 export default function Navbar() {
     const [ isLoggedIn, setIsLoggedIn ] = useState(false);
     useEffect(() => {
-        const fetchCookie = async () => {
-            const cookies = await getCookie('auth');
-            if(cookies === undefined || cookies == undefined) {
-                setIsLoggedIn(false);
-            }
-            setIsLoggedIn(true);
-        }
-        fetchCookie();
-    }, [])
+      const checkUser = async () => {
+        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/app`, {
+          method: 'GET',
+          credentials: 'include',
+          headers: {
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Credentials":"true",
+          }
+      }) 
+        const response = await resp.json();
+        if(response. ok == true) setIsLoggedIn(true);
+        if(response.ok == false) setIsLoggedIn(false);
+      }
+      checkUser();
+    })
     return (
         <>
         <div className="navbar bg-transparent">
@@ -34,8 +40,12 @@ export default function Navbar() {
         : 
         <>
         <div className="flex gap-1.5 mt-3">
-        <Register />
-        <Login />
+          {
+            isLoggedIn 
+            ? <Dashboard />
+            : <><Register />
+              <Login /></>
+          }
         </div>
         </>
       }

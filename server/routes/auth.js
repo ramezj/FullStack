@@ -3,15 +3,13 @@ const router = express.Router();
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient()
 import bcrypt from "bcrypt";
+import { authenticated } from "../middleware/auth.js";
 
-router.get('/authed', async(req, res) => {
-    if(req.session.user) {
-        res.json(req.session.user)
-    } else {
-        res.status(400).json({
-            msg:"not logged in"
-        })
-    }
+router.get('/app', authenticated, async(req, res) => {
+    res.status(200).json({
+        ok:true,
+        response:req.session.user
+    })
 })
 
 router.post('/register', async (req, res) => {
@@ -50,7 +48,6 @@ router.post('/register', async (req, res) => {
         req.session.user = {
             id:user.id
         }
-        req.session.save();
         return res.status(200).json({
             ok:true,
             response:user

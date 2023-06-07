@@ -1,7 +1,8 @@
 {
   "type":"module",
   "scripts": {
-    "dev": "nodemon index"
+    "dev": "nodemon index",
+    "redis":"redis-server --port 6380 --slaveof 127.0.0.1 6379"
   },
   "dependencies": {
     "@prisma/client": "^4.15.0",
