@@ -10,12 +10,12 @@ export default function Dashboard() {
     font-bold 
     leading-none 
     tracking-tight 
-    text-gray-900
     md:text-7xl 
     lg:text-8xl 
-    dark:text-white"
+    text-gray-950
+    "
     >
-    Feedback management redefined
+    Feedback management redefined.
     </h1>
     <br />
     <a href="#" 
@@ -23,16 +23,14 @@ export default function Dashboard() {
     inline-flex 
     items-center 
     justify-center 
-    px-12 py-3 
+    px-14 py-3 
     text-base 
     font-bold 
     text-center 
     text-white 
     bg-gray-950 
     rounded-lg 
-    focus:ring-4 
-    focus:ring-blue-300 
-    dark:focus:ring-blue-900
+    active:border-none
     shadow-lg
     "
     >

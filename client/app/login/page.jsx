@@ -4,14 +4,14 @@ import EmailInput from '@/components/auth/EmailInput';
 import SubmitData from '@/components/auth/SubmitData';
 import PasswordInput from '@/components/auth/PasswordInput';
 
-export default function Register() {
+export default function Login() {
     const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
     const [ loading, setLoading ] = useState(false);
     const [ data, setData ] = useState();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
             method: 'POST',
             credentials: 'include',
             headers: {
@@ -32,7 +32,7 @@ export default function Register() {
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
-            Register
+            Login
           </h2>
         </div>
 
@@ -62,7 +62,7 @@ export default function Register() {
               </div>
             </div>
             <div>
-              <SubmitData value="Register" onClick={handleSubmit} />
+              <SubmitData value="Login" onClick={handleSubmit} />
             </div>
           </form>
         </div>

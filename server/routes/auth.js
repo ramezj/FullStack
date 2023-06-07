@@ -6,9 +6,14 @@ import bcrypt from "bcrypt";
 import { authenticated } from "../middleware/auth.js";
 
 router.get('/app', authenticated, async(req, res) => {
+    const user = await prisma.user.findUnique({
+        where: {
+            id: req.session.user.id
+        }
+    })
     res.status(200).json({
         ok:true,
-        response:req.session.user
+        response:user
     })
 })
 

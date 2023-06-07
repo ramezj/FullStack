@@ -27,7 +27,7 @@ export default function Navbar() {
         <>
         <div className="navbar bg-transparent">
   <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl font-bold text-gray-900"><b>Super</b>Feedback</a>
+    <a href="/" className="btn btn-ghost normal-case text-xl font-bold text-gray-900"><b>Super</b>Feedback</a>
   </div>
   <div className="flex-none gap-2">
     <div className="dropdown dropdown-end">
@@ -43,8 +43,7 @@ export default function Navbar() {
           {
             isLoggedIn 
             ? <Dashboard />
-            : <><Register />
-              <Login /></>
+            : <><Login /></>
           }
         </div>
         </>
