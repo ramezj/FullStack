@@ -23,7 +23,7 @@ const app = express();
 
 // Middleware 
 app.use(cors({
-    origin: 'http://localhost:3000, https://fullstack-production-8aad.up.railway.app/login',
+    origin: process.env.CLIENT_URL,
     methods:"GET,POST,PUT,DELETE",
     credentials:true
 }))
