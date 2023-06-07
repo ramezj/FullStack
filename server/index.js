@@ -9,7 +9,11 @@ import { router as auth } from "./routes/auth.js"
 import redis, { createClient } from "redis"
 import RedisStore from "connect-redis"
 
-const client = createClient();
+const client = createClient({
+    host:process.env.REDISHOST,
+    port:process.env.REDISPORT,
+    password:process.env.REDISPASSWORD
+});
 client.on('error', err => console.log('Redis Client Error', err));
 
 await client.connect();
