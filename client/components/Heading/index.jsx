@@ -30,7 +30,6 @@ export default function Dashboard() {
     text-white 
     bg-gray-950 
     rounded-lg 
-    active:border-none
     shadow-lg
     "
     >
