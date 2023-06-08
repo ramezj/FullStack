@@ -2,10 +2,18 @@
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Heading from "@/components/Heading"
+import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-  <div className='bg-[url("/wallpaper.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
+  <motion.div 
+      initial={{opacity: 0 }}
+      animate={{opacity: 1 }}
+      exit={{opacity: 0 }}
+      transition={{
+        duration:1
+      }}
+  className='bg-[url("/wallpaper.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
    <Navbar />
    <br />
    <div className="items-center content-center">
@@ -16,6 +24,6 @@ export default function Home() {
       </div>
     </center>
    </div>
-   </div>
+   </motion.div>
   )
 }
