@@ -35,48 +35,43 @@ export default function Register() {
     }
 
   return (
-    <div className='bg-[url("/wallpaper.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
+    <div className='bg-[url("/abstract.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
     <Navbar />
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
-            Register
-          </h2>
-        </div>
-
+        <center>
+        <div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
-                Email address
-              </label>
+            <div className="flex">
+                <label htmlFor="password" className="block text-sm font-bold leading-6 text-white">
+                  Email Address
+                </label>
+              </div>
               <div className="mt-2">
                 <EmailInput value={email} onChange={(e) => setEmail(e.target.value)}/>
               </div>
             </div>
             <div>
-              <div className="flex items-center justify-between">
+              <div className="flex">
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">
                   Password
                 </label>
-                <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                    Forgot password?
-                  </a>
-                </div>
               </div>
               <div className="mt-2">
                 <PasswordInput value={password} onChange={(e) => setPassword(e.target.value)} />
               </div>
             </div>
             <div>
-              <Link href="/login" className='text-indigo-700 font-bold'>Sign In Instead?</Link>
+              <Link href="/login" className='text-indigo-700 font-bold float-left'>Sign In Instead?</Link>
               <br /><br />
               <SubmitData value="Register" onClick={handleSubmit} />
             </div>
           </form>
         </div>
         {JSON.stringify(data)}
+      </div>
+      </center>
       </div>
       </div>
   )

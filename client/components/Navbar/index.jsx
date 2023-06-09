@@ -27,7 +27,7 @@ export default function Navbar() {
         <>
         <div className="navbar bg-transparent">
   <div className="flex-1">
-    <a href="/" className="btn btn-ghost normal-case text-xl font-extrabold text-gray-900 italic"><b className="font-bolder">⚡ Super</b>Feedback</a>
+    <a href="/" className="btn btn-ghost normal-case text-xl font-extrabold text-white italic"><b className="font-bolder">⚡ Super</b>Feedback</a>
   </div>
   <div className="flex-none gap-2">
     <div className="dropdown dropdown-end">

@@ -13,7 +13,7 @@ export default function Home() {
       transition={{
         duration:1
       }}
-  className='bg-[url("/wallpaper.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
+  className='bg-[url("/abstract.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
    <Navbar />
    <br />
    <div className="items-center content-center">

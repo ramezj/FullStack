@@ -12,7 +12,7 @@ export default function Dashboard() {
     tracking-tight 
     md:text-7xl 
     lg:text-8xl 
-    text-gray-950
+    text-white
     "
     >
     Feedback management redefined
