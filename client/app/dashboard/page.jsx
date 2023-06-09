@@ -31,7 +31,7 @@ export default function dashboard() {
         getData();
     }, [])
     return (
-        <div className='bg-[url("/wallpaper.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
+        <div className='bg-[url("/abstract.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
         <Navbar />
         <center>
             {
