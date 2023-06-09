@@ -15,7 +15,7 @@ export default function Dashboard() {
     text-gray-950
     "
     >
-    Feedback management redefined.
+    Feedback management redefined
     </h1>
     <br />
     <a href="#" 

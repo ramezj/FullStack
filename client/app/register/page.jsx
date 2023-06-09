@@ -3,8 +3,12 @@ import React, { useState, useEffect } from 'react';
 import EmailInput from '@/components/auth/EmailInput';
 import SubmitData from '@/components/auth/SubmitData';
 import PasswordInput from '@/components/auth/PasswordInput';
+import { useRouter } from 'next/navigation';
+import Navbar from '@/components/Navbar';
+import Link from 'next/link'
 
 export default function Register() {
+    const { push } = useRouter();
     const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
     const [ loading, setLoading ] = useState(false);
@@ -24,11 +28,15 @@ export default function Register() {
             })
         })
         const res = await resp.json();
+        if(res.ok == true) {
+          push('/dashboard')
+        }
         setData(res);
     }
 
   return (
-    <>
+    <div className='bg-[url("/wallpaper.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
+    <Navbar />
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
@@ -62,12 +70,14 @@ export default function Register() {
               </div>
             </div>
             <div>
+              <Link href="/login" className='text-indigo-700 font-bold'>Sign In Instead?</Link>
+              <br /><br />
               <SubmitData value="Register" onClick={handleSubmit} />
             </div>
           </form>
         </div>
         {JSON.stringify(data)}
       </div>
-    </>
+      </div>
   )
 }
