@@ -15,8 +15,8 @@ model User {
   id String @id @default(cuid())
   email String @unique
   password String
-  active Boolean
-  premium Boolean
+  active Boolean @default(false)
+  premium Boolean @default(false)
   website String @default("")
   createdAt     DateTime   @default(now())
   feedbacks     Feedback[]
