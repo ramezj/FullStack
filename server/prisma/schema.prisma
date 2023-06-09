@@ -17,11 +17,7 @@ model User {
   password String
   active Boolean
   premium Boolean
-  subscription_id String @default("")
-  subscription_update_url String @default("")
-  subscription_cancel_url String @default("")
-  websiteUrl String @default("")
-  subscription_plan_id Int @default(0)
+  website String @default("")
   createdAt     DateTime   @default(now())
   feedbacks     Feedback[]
 }
