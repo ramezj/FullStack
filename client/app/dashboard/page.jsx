@@ -4,12 +4,15 @@ import { useRouter } from 'next/navigation';
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion"
 import Feedback from "@/components/dashboard/Feedback";
+import Username from "@/components/dashboard/Username";
 
 export default function dashboard() {
     const { push } = useRouter();
     const [ user, setUser ] = useState();
+    const [ loading, setLoading ] = useState(true);
     useEffect(() => {
         const getData = async () => {
+            setLoading(true);
             const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/app`, {
                 method: 'GET',
                 credentials: 'include',
@@ -23,14 +26,20 @@ export default function dashboard() {
                 push('/login');
             }
             setUser(response.response);
-            console.log(response);
+            setLoading(false);
         }
         getData();
     }, [])
     return (
         <div className='bg-[url("/wallpaper.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
         <Navbar />
-        {JSON.stringify(user)}
+        <center>
+            {
+                loading 
+                ?   <> loading.. </>
+                :   <> <Username username={user.email} /> </>
+            }
+        </center>
         <center>
             <Feedback />
         </center>

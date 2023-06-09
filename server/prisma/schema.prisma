@@ -8,10 +8,23 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 model User {
   id String @id @default(cuid())
   email String @unique
   password String
+  feedbacks     Feedback[]
+}
+model Feedback {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  body      String
+  createdAt DateTime @default(now())
+  email     String
+  geo       String?
+  ipAddress String?
+  website   String?
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
