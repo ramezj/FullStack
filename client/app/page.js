@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Heading from "@/components/Heading"
 import { motion } from "framer-motion"
 import Widget from '@/components/Widget'
+import Features from '@/components/Features'
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
         <Heading />
       </div>
       {/* <Widget backgroundColor='red-200'/> */}
+      <br /><br />
+      <Features />
     </center>
    </div>
    </motion.div>
