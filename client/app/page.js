@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Heading from "@/components/Heading"
 import { motion } from "framer-motion"
+import Widget from '@/components/Widget'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <div>
         <Heading />
       </div>
+      {/* <Widget backgroundColor='red-200'/> */}
     </center>
    </div>
    </motion.div>
