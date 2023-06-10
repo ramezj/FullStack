@@ -104,6 +104,10 @@ router.post('/login', async(req, res) => {
 
 router.get('/logout', async(req, res) => {
     req.session.destroy();
+    res.status(200).json({
+        ok:true,
+        response:'Logged Out Successfully.'
+    })
 })
 
 export { router }

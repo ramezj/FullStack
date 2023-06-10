@@ -4,6 +4,7 @@ import { getCookie } from 'cookies-next';
 import Login from './Login';
 import Register from './Register';
 import Dashboard from './Dashboard';
+import LogOut from './Logout';
 
 export default function Navbar() {
     const [ isLoggedIn, setIsLoggedIn ] = useState(false);
@@ -42,7 +43,11 @@ export default function Navbar() {
         <div className="flex gap-1.5 mt-3">
           {
             isLoggedIn 
-            ? <Dashboard />
+
+            ? <>
+              <LogOut />
+              <Dashboard />
+              </>
             : <><Login /></>
           }
         </div>
