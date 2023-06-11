@@ -15,7 +15,7 @@ export default function Home() {
       transition={{
         duration:1
       }}
-  className='bg-[url("/abstract.jpg")] h-full min-h-screen bg-cover bg-no-repeat w-full'>
+  className='bg-[url("/6.jpg")] h-full min-h-screen bg-center bg-no-repeat w-full'>
    <Navbar />
    <br />
    <div className="items-center content-center">
@@ -24,9 +24,10 @@ export default function Home() {
       <div>
         <Heading />
       </div>
-      {/* <Widget backgroundColor='red-200'/> */}
       <br /><br />
-      <Features />
+      <Widget backgroundColor='red-200'/>
+      <br /><br />
+      {/* <Features /> */}
     </center>
    </div>
    </motion.div>
