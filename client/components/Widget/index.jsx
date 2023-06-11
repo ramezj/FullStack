@@ -4,7 +4,7 @@ import Other from "./Other"
 
 export default function Widget(props) {
     return (
-    <div class="block max-w-md p-12 bg-white border border-none rounded-lg shadow hover:bg-gray-100 dark:bg-gray-950 dark:border-gray-700 dark:hover:bg-gray-950">
+    <div class="block max-w-md p-12 bg-white border border-none rounded-lg hover:bg-gray-100 dark:bg-gray-950 dark:border-gray-700 dark:hover:bg-gray-950">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">What's on your mind?</h5>
     <br />
     <div className="flex space-x-5 justify-center">
