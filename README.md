@@ -4,3 +4,4 @@
 - Add focus border/ring to buttons on widget.
 - Fix Widget Sizing.
 - Dropdown button for navigation bar.
+- Glowy Dashboard Button

@@ -8,7 +8,7 @@ export default function Dashboard() {
         href="/dashboard"
         class="
         text-white 
-        bg-gray-900 
+        bg-gradient-to-br from-orange-400 to-pink-500
         hover:bg-gray-950 
         focus:outline-none  
         focus:ring-none
