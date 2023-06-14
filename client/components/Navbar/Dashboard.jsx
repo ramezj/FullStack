@@ -7,6 +7,8 @@ export default function Dashboard() {
         <Link type="button" 
         href="/dashboard"
         class="
+        shadow-orange
+        flex
         text-white 
         bg-gradient-to-br from-orange-400 to-pink-500
         hover:bg-gray-950 
@@ -22,6 +24,7 @@ export default function Dashboard() {
         dark:border-none"
         >
         Dashboard
+        
         </Link>
         </>
     )

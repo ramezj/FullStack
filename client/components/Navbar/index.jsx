@@ -45,8 +45,6 @@ export default function Navbar() {
             isLoggedIn 
 
             ? <>
-            
-              <LogOut />
               <Dashboard />
               </>
             : <><Login /></>

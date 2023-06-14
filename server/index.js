@@ -38,7 +38,9 @@ app.use(session({
     secret:'test',
     resave: false,
     saveUninitialized:false,
-    cookie: ({})
+    cookie: ({
+        maxAge:null
+    })
 }));
 
 // Routes 

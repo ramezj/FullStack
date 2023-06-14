@@ -25,7 +25,7 @@ export default function Home() {
         <Heading />
       </div>
       <br /><br />
-      <Widget backgroundColor='red-200'/>
+      <Widget/>
       <br /><br />
       {/* <Features /> */}
     </center>
