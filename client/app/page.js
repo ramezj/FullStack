@@ -25,7 +25,7 @@ export default function Home() {
         <Heading />
       </div>
       <br /><br />
-      <Widget/>
+      <Widget UID="clj19dz170000usiwu2dkkz2u"/>
       <br /><br />
       {/* <Features /> */}
     </center>
