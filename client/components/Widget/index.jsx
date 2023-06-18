@@ -22,7 +22,7 @@ export default function Widget(props) {
         text-sm rounded-lg 
         focus:ring-blue-500 
         focus:border-blue-500 
-        block w-full p-2.5  
+        block w-full p-3.5
         dark:bg-gray-900  
         dark:placeholder-gray-400 
         dark:text-white 
