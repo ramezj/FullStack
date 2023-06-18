@@ -6,6 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 import bodyParser from "body-parser";
 import { router as auth } from "./routes/auth.js"
+import { router as feedback } from "./routes/feedback.js"
 import redis, { createClient } from "redis"
 import RedisStore from "connect-redis"
 
@@ -45,6 +46,7 @@ app.use(session({
 
 // Routes 
 app.use('/auth', auth);
+app.use('/feedback', feedback);
 
 app.get('/', async (req, res) => {
     res

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client":"cd client && yarn dev",
-    "server":"cd server && yarn dev"
+    "server":"cd server && yarn dev",
+    "studio":"cd server && npx prisma studio"
   },
   "keywords": [],
   "author": "",

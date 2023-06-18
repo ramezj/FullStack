@@ -6,8 +6,9 @@ export default function Login() {
         <Link type="button" 
         href="/login"
         class="
+        shadow-orange
         text-white 
-        bg-gray-900 
+        bg-gradient-to-br from-[#6a38cf] to-pink-500 
         hover:bg-gray-950 
         focus:outline-none  
         focus:ring-none

@@ -24,11 +24,12 @@ model User {
 model Feedback {
   id        String   @id @default(cuid())
   userId    String   @map("user_id")
-  body      String
+  description      String
   createdAt DateTime @default(now())
   email     String
   geo       String?
-  ipAddress String?
+  ip String?
   website   String?
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId])
 }
