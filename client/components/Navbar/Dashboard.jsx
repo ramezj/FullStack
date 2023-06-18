@@ -7,6 +7,8 @@ export default function Dashboard() {
         <Link type="button" 
         href="/dashboard"
         class="
+        normal-case
+        btn btn-ghost
         shadow-orange
         flex
         text-white 
