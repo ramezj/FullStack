@@ -28,6 +28,6 @@ body {
 .shadow-orange {
   box-shadow: 0px 0px 45px -11px rgba(251,146,60);
 }
-.widgetActive:active {
-  background-color:red;
+.widgetActive {
+  
 }
