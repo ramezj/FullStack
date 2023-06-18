@@ -10,7 +10,7 @@ export default function Dashboard() {
     font-bold 
     leading-none 
     tracking-tight 
-    md:text-7xl 
+    md:text-4xl 
     lg:text-8xl 
     text-white
     "
