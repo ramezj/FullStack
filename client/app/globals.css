@@ -27,6 +27,7 @@ body {
 }
 .shadow-orange {
   box-shadow: 0px 0px 45px -11px rgb(215, 26, 253);
+  -webkit-appearance: none;
 }
 .widgetActive {
   
