@@ -8,6 +8,7 @@ export default function Widget(props) {
     const [ description, setDescription ] = useState("");
     const [ loading, setLoading ] = useState();
     const [ response, setResponse ] = useState();
+    const [ text, setText ] = useState("Report Feedback");
     const submitFeedback = async () => {
         setLoading(true);
         const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback`, {
@@ -25,6 +26,13 @@ export default function Widget(props) {
         })
         const data = await resp.json();
         setResponse(data);
+        if(data.ok == true) {
+            setText("Feedback Received!")
+        } else {
+            if(data.ok == false) {
+                setText("Something Went Wrong")
+            }
+        }
         setLoading(false);
         console.log(resp);
     }   
@@ -97,10 +105,9 @@ export default function Widget(props) {
             </>
         }
         <span>
-        Report Feedback
+        {text}
         </span>
         </span>
-        {JSON.stringify(response)}
         </center>
     </div>
     )
