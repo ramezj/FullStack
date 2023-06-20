@@ -58,7 +58,7 @@ router.get('/', authenticated, async(req, res) => {
         },
         include: {
             feedbacks: true
-        }
+        },
     })
     res.status(200).json({
         ok:true,
